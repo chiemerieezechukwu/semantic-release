@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/chiemerieezechukwu/semantic-release/compare/v1.1.0...v1.1.1) (2022-11-13)
+
+
+### Fix
+
+* add all logic to action.yml ([a503dfa](https://github.com/chiemerieezechukwu/semantic-release/commit/a503dfafb4df6c830987959a63b5a3898aed2f88))
+
 ## [1.0.2](https://github.com/chiemerieezechukwu/semantic-release/compare/v1.0.1...v1.0.2) (2022-11-13)
 
 
