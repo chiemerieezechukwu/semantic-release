@@ -25,12 +25,4 @@ prepare:
     assets:
       - CHANGELOG.md
   - path: "@semantic-release/changelog"
-
-publish:
-  - path: "@semantic-release/github"
-
-success:
-  - "@semantic-release/github"
-
-fail:
-  - "@semantic-release/github"
+    changelogFile: CHANGELOG.md
