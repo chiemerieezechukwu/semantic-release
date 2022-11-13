@@ -11,9 +11,28 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version: 17
+
     - name: Install dependencies
       shell: bash
-      run: npm ci
+      run: |
+        echo '{
+          "branches": ["main"],
+          "plugins": [
+            ["@semantic-release/commit-analyzer",{"preset":"eslint"}],
+            ["@semantic-release/release-notes-generator",{"preset":"eslint"}],
+            "@semantic-release/changelog",
+            ["@semantic-release/git",{"assets":["CHANGELOG.md"]}],
+            "@semantic-release/github"
+          ]
+        }' > .releaserc.json
+        npm i semantic-release@^19.0.5 \
+          @semantic-release/commit-analyzer@^9.0.2 \
+          @semantic-release/release-notes-generator@^10.0.3 \
+          @semantic-release/changelog@^6.0.1 \
+          @semantic-release/git@^10.0.1 \
+          @semantic-release/github@^8.0.6 \
+          conventional-changelog-eslint@^3.0.9
+
     - name: Release
       env:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
