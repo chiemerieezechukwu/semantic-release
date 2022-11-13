@@ -1,0 +1,36 @@
+branches:
+  - "main"
+
+plugins:
+  - "@semantic-release/commit-analyzer"
+  - "@semantic-release/release-notes-generator"
+  - "@semantic-release/changelog"
+  - "@semantic-release/git"
+  - "@semantic-release/github"
+
+verifyConditions:
+  - "@semantic-release/git"
+  - "@semantic-release/github"
+
+analyzeCommits:
+  - path: "@semantic-release/commit-analyzer"
+    preset: "eslint"
+
+generateNotes:
+  - path: "@semantic-release/release-notes-generator"
+    preset: "eslint"
+
+prepare:
+  - path: "@semantic-release/git"
+    assets:
+      - CHANGELOG.md
+  - path: "@semantic-release/changelog"
+
+publish:
+  - path: "@semantic-release/github"
+
+success:
+  - "@semantic-release/github"
+
+fail:
+  - "@semantic-release/github"
