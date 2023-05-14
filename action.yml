@@ -22,7 +22,8 @@ runs:
             ["@semantic-release/release-notes-generator",{"preset":"eslint"}],
             "@semantic-release/changelog",
             ["@semantic-release/git",{"assets":["CHANGELOG.md"]}],
-            "@semantic-release/github"
+            "@semantic-release/github",
+            ["@semantic-release/exec",{"prepareCmd": "echo ${nextRelease.version}"}]
           ]
         }' > .releaserc.json
         npm i semantic-release@^19.0.5 \
@@ -31,7 +32,8 @@ runs:
           @semantic-release/changelog@^6.0.1 \
           @semantic-release/git@^10.0.1 \
           @semantic-release/github@^8.0.6 \
-          conventional-changelog-eslint@^3.0.9
+          conventional-changelog-eslint@^3.0.9 \
+          @semantic-release/exec@^6.0.3 \
 
     - name: Release
       env:
