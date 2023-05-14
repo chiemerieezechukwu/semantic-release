@@ -3,6 +3,10 @@ name: Release Action
 inputs:
   GITHUB_TOKEN:
     required: true
+  pre-release-script:
+    required: false
+    default: |
+      "echo \"Next release version: ${nextRelease.version}\""
 
 runs:
   using: composite
@@ -23,7 +27,7 @@ runs:
             "@semantic-release/changelog",
             ["@semantic-release/git",{"assets":["CHANGELOG.md"]}],
             "@semantic-release/github",
-            ["@semantic-release/exec",{"prepareCmd": "echo ${nextRelease.version}"}]
+            ["@semantic-release/exec",{"prepareCmd": ${{ inputs.pre-release-script }}}]
           ]
         }' > .releaserc.json
         npm i semantic-release@^19.0.5 \
