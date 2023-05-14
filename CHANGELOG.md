@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/chiemerieezechukwu/semantic-release/compare/v1.2.0...v1.2.1) (2023-05-14)
+
+
+### Fix
+
+* dynamic `pre-release` script ([92f3c25](https://github.com/chiemerieezechukwu/semantic-release/commit/92f3c2533a5d673da27cdb035fceda855659cae8))
+
 # [1.2.0](https://github.com/chiemerieezechukwu/semantic-release/compare/v1.1.1...v1.2.0) (2023-05-14)
 
 
