@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/chiemerieezechukwu/semantic-release/compare/v1.1.1...v1.2.0) (2023-05-14)
+
+
+### New
+
+* Testing exec plugin ([630a52f](https://github.com/chiemerieezechukwu/semantic-release/commit/630a52f23bd4323846feb5716ac7a20935276a6f))
+
 ## [1.1.1](https://github.com/chiemerieezechukwu/semantic-release/compare/v1.1.0...v1.1.1) (2022-11-13)
 
 
